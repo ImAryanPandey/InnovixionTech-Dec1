@@ -1,17 +1,16 @@
 # InnovixionTech-Dec1 Portfolio Website
 
-![Hero Image](path/to/your/heroImage.jpeg)
+![Hero Image](images/heroImage.jpeg)
 
 ## Overview
 
-This portfolio website showcases the skills and projects of Aryan Pandey, a Tech Enthusiast and Web Developer. It's built using HTML, CSS, JavaScript, Bootstrap 5, and incorporates Font Awesome icons. The live demo can be accessed [here](your-live-demo-link).
+This portfolio website showcases the skills and projects of Aryan Pandey, a Tech Enthusiast and Web Developer. It's built using HTML, CSS, JavaScript, Bootstrap 5, and incorporates Font Awesome icons. The live demo can be accessed [Soon](https://imaryanpandey.github.io/InnovixionTech-Dec1/).
 
 ## Tools Used
 
 - HTML, CSS, JavaScript
 - [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 - [Font Awesome 5](https://fontawesome.com/)
-- [Google Map](https://www.embed-map.com/)
 
 ## Sections
 
@@ -33,8 +32,4 @@ The CSS file (`style.css`) contains styling for various sections, such as spacin
 
 ## Usage
 
-To view the live demo, visit [here](your-live-demo-link). Feel free to explore the different sections and projects showcased.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+To view the live demo, visit [Coming Soon](your-live-demo-link). Feel free to explore the different sections and projects showcased.
