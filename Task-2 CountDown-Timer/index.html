@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header bg-dark text-white">
+        <h1>Countdown Timer</h1>
+        <button class="toggle-btn btn btn-light" onclick="toggleDarkMode()">
+            <i class="fas fa-adjust" title="Toggle Dark Mode"></i>
+        </button>
+    </header>
+    <!-- countdown display -->
+    <section class="countdown-display container mt-4">
+        <!-- Add Bootstrap grid classes for responsive layout -->
+        <div class="row">
+            <div class="col">
+                <h2>Days</h2>
+                <div id="days" class="display-value"></div>
+            </div>
+            <div class="col">
+                <h2>Hours</h2>
+                <div id="hours" class="display-value"></div>
+            </div>
+            <div class="col">
+                <h2>Minutes</h2>
+                <div id="minutes" class="display-value"></div>
+            </div>
+            <div class="col">
+                <h2>Seconds</h2>
+                <div id="seconds" class="display-value"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- event details -->
+    <section class="event-details container mt-4">
+        <label for="dateInput">Event Date and Time</label>
+        <input type="text" id="dateInput" class="form-control" placeholder="Select Event Date and Time"
+            autocomplete="off">
+    </section>
+    <!-- controls -->
+    <section class="controls"></section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="countdown.js"></script>
+</body>
+
+</html>

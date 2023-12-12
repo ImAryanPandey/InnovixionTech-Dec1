@@ -1,0 +1,94 @@
+/* Reset some default styles and apply a box-sizing rule */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a background color to the entire body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    /* Light gray background */
+    color: #333;
+    /* Dark text color */
+}
+
+/* Style the header section */
+header {
+    background-color: #333;
+    /* Dark background color for the header */
+    color: #fff;
+    /* White text color for the header */
+    padding: 20px;
+    /* Add padding for spacing */
+    text-align: center;
+    /* Center the text */
+}
+
+/* Style the countdown display section */
+.countdown-display {
+    padding: 20px;
+    text-align: center;
+    background-color: #fff; /* Light background color */
+    border-radius: 10px; /* Add border-radius for a softer appearance */
+}
+
+/* Style the event details section */
+.event-details {
+    padding: 20px;
+    background-color: #f0f0f0; /* Light gray background color */
+    border-radius: 10px;
+    margin-top: 20px; /* Add margin for separation */
+}
+
+label {
+    display: block;
+    /* Display labels as blocks for better spacing */
+    margin-bottom: 5px;
+    /* Margin between labels */
+}
+
+input {
+    width: 100%;
+    /* Full width for input fields */
+    padding: 8px;
+    /* Padding for input fields */
+    margin-bottom: 10px;
+    /* Margin between input fields */
+}
+
+/* Style the controls section */
+.controls {
+    padding: 20px;
+    text-align: center;
+    /* Center the controls */
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #111;
+    /* Dark background color */
+    color: #fff;
+    /* Light text color for dark mode */
+}
+body.dark-mode .countdown-display {
+    background-color: #333; /* Darker background color for the countdown display */
+}
+/* Adjust the background color of the event details section in dark mode */
+body.dark-mode .event-details {
+    background-color: #222; /* Darker background color for the event details section */
+    color: #fff; /* Light text color for better contrast */
+}
+/* Toggle button styles */
+.toggle-btn {
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Styling for active (pressed) state of the toggle button */
+.toggle-btn:active {
+    background-color: #bbb;
+}
