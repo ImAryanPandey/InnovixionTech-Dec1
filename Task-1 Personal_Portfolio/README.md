@@ -4,7 +4,7 @@
 
 ## Overview
 
-This portfolio website showcases the skills and projects of Aryan Pandey, a Tech Enthusiast and Web Developer. It's built using HTML, CSS, JavaScript, Bootstrap 5, and incorporates Font Awesome icons. The live demo can be accessed [Soon](https://imaryanpandey.github.io/InnovixionTech-Dec1/).
+This portfolio website showcases the skills and projects of Aryan Pandey, a Tech Enthusiast and Web Developer. It's built using HTML, CSS, JavaScript, Bootstrap 5, and incorporates Font Awesome icons. The live demo can be accessed [Here](https://innovixion-tech-dec1-task1.vercel.app/).
 
 ## Tools Used
 
@@ -32,4 +32,4 @@ The CSS file (`style.css`) contains styling for various sections, such as spacin
 
 ## Usage
 
-To view the live demo, visit [Coming Soon](your-live-demo-link). Feel free to explore the different sections and projects showcased.
+To view the live demo, visit [Coming Soon](https://innovixion-tech-dec1-task1.vercel.app/). Feel free to explore the different sections and projects showcased.
