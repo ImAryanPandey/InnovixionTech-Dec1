@@ -2,32 +2,9 @@
 const dateInput = document.querySelector('#dateInput');
 const countdownDisplay = document.querySelector('.countdown-display');
 const darkModeToggle = document.querySelector('.toggle-btn');
-let countdownInterval; // Declare countdownInterval globally
+const eventNameInput = document.querySelector('#eventNameInput');
+let countdownInterval;
 
-// Function to show browser notification
-function showNotification() {
-    const notificationOptions = {
-        body: 'The countdown has reached zero!',
-        // Remove the 'icon' property or provide a valid image URL
-    };
-
-    // Check if the browser supports notifications
-    if ('Notification' in window) {
-        // Check if permission is granted
-        if (Notification.permission === 'granted') {
-            // Display the notification
-            new Notification('Countdown Alert', notificationOptions);
-        } else if (Notification.permission !== 'denied') {
-            // Request permission
-            Notification.requestPermission().then(function (permission) {
-                // If permission is granted, display the notification
-                if (permission === 'granted') {
-                    new Notification('Countdown Alert', notificationOptions);
-                }
-            });
-        }
-    }
-}
 
 // Function to set dark mode based on user preference
 function setDarkMode() {
@@ -101,20 +78,83 @@ const flatpickrInstance = flatpickr('#dateInput', {
     }
 });
 
+// Function to get and display the custom event name
+function getEventName() {
+    return eventNameInput.value.trim() || 'Custom Event';
+}
+
+// Function to play notification sound
+function playNotificationSound() {
+    const notificationSound = new Audio('./tuturu_1.mp3');
+    notificationSound.play();
+}
+
+function showInAppNotification(eventName) {
+    const inAppNotification = document.createElement('div');
+    inAppNotification.classList.add('in-app-notification');
+    inAppNotification.textContent = `Countdown for "${eventName}" has reached zero!`;
+    document.body.appendChild(inAppNotification);
+
+    // Add 'show' class to trigger the animation
+    setTimeout(() => {
+        inAppNotification.classList.add('show');
+    }, 100);
+
+    // Remove the notification after 5 seconds
+    setTimeout(() => {
+        inAppNotification.remove();
+    }, 5000);
+}
+
+
+function showNotification() {
+    playNotificationSound();
+
+    const eventName = getEventName();
+    const notificationOptions = {
+        body: `Countdown for "${eventName}" has reached zero!`,
+    };
+
+    if ('Notification' in window) {
+        if (Notification.permission === 'granted') {
+            new Notification('Countdown Alert', notificationOptions);
+        } else if (Notification.permission !== 'denied') {
+            Notification.requestPermission().then(function (permission) {
+                if (permission === 'granted') {
+                    new Notification('Countdown Alert', notificationOptions);
+                }
+            });
+        }
+    }
+
+    // Show in-app notification when countdown reaches zero
+    showInAppNotification(eventName);
+}
+
 // Periodically update the countdown display every second
 function startCountdown() {
+    let hasNotificationShown = false;
+
     countdownInterval = setInterval(function () {
         const ongoingTimeDifference = calculateTimeDifference(flatpickrInstance.selectedDates[0]);
         updateCountdownDisplay(ongoingTimeDifference);
 
         // Check if the event has already passed
-        if (ongoingTimeDifference <= 0) {
+        if (ongoingTimeDifference <= 0 && !hasNotificationShown) {
             // Stop the countdown and clear the interval
             clearInterval(countdownInterval);
+
+            // Prevent further execution
+            hasNotificationShown = true;
+
+            // Show notification only once
             showNotification();
+            showInAppNotification(getEventName());
+
         }
     }, 1000);
 }
+
 
 // Call startCountdown initially
 startCountdown();
